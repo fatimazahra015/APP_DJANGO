@@ -1,0 +1,95 @@
+{% extends 'Ecom/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Header Section -->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5 text-center">
+            <div class="text-white">
+                <h1 class="display-4 fw-bolder">Processing Order...</h1>
+                <p class="lead fw-normal text-white-50 mb-0">This is Temporary</p>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Cart Section -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <!-- Order Summary Card -->
+                <div class="card shadow-sm mb-4 border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Order Summary</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for product in cart_products %}
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h6 class="mb-1">{{ product.name }}</h6>
+                                    {% if product.is_sale %}
+                                        <span class="text-danger fw-bold">{{ product.sale_price }} DH</span>
+                                    {% else %}
+                                        <span class="fw-bold">{{ product.price }} DH</span>
+                                    {% endif %}
+                                    <br>
+                                    <small class="text-muted">Quantity: 
+                                        {% for key, value in quantities.items %}
+                                            {% if key == product.id|slugify %}
+                                                {{ value }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </small>
+                                </div>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                        <div class="d-flex justify-content-between">
+                            <strong>Total:</strong>
+                            <strong>{{ totals }} DH</strong>
+                        </div>
+                        <br>
+                        <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-primary">Update Items</a>
+                    </div>
+                </div>
+
+                <!-- Shipping Info Card -->
+                <div class="card shadow-sm mb-4 border-0">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">Shipping Info</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-1">Name: {{ shipping_info.shipping_full_name }}</p>
+                        <p class="mb-1">Email: {{ shipping_info.shipping_email }}</p>
+                        <p class="mb-1">Address 1: {{ shipping_info.shipping_address1 }}</p>
+                        <p class="mb-1">Address 2: {{ shipping_info.shipping_address2 }}</p>
+                        <p class="mb-1">City: {{ shipping_info.shipping_city }}</p>
+                        <p class="mb-1">State: {{ shipping_info.shipping_state }}</p>
+                        <p class="mb-1">Zipcode: {{ shipping_info.shipping_zipcode }}</p>
+                        <p class="mb-3">Country: {{ shipping_info.shipping_country }}</p>
+                        
+                        <a href="{% url 'checkout' %}" class="btn btn-outline-secondary btn-sm">Update Shipping</a>
+                    </div>
+                </div>
+
+                <!-- Billing Info Card -->
+                <div class="card shadow-sm mb-4 border-0">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">Billing Info</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'process_order' %}" method="POST">
+                            {% csrf_token %}
+                            {{ billing_form }}
+                            <a href="{% url 'checkout' %}" class="btn btn-outline-secondary btn-sm">Update Billing</a>
+                    </div>
+                </div>
+
+                <!-- Continue to Billing Button -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Pay Now</button>
+                </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+{% endblock content %}

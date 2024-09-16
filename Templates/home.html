@@ -1,0 +1,490 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreeCoomp</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> 
+
+</head>
+<body>
+<!------------------------------------nav-bar---------------------------------------------------->
+    <section id="home" class="header">
+        <nav>
+            <a href="home.html"><img src="{% static 'assets/img/logo2.png' %}" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i> <!-- Icône de fermeture -->
+                <ul>
+                    <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                    <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                    <li><a href="#realisation" class="nav-link">Realisation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- <li><a href="#partenaires">Partenaire</a></li> -->
+                    <!-- <li><a href="#about" class="nav-link">ABOUT</a></li> -->
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> <!-- Icône du menu -->
+        </nav>
+        <div class="text-box">
+            <h1>ThreeComp <div class="slider">
+                    <div>SECURITY</div>
+                    <div>IA</div>
+                    <div>DATA</div>
+                </div>
+            </h1>
+            <p>Ici, Nous Conevons des experiences immersives,<br>devloppons des solutions sur mesure, et donnons du sens
+                à vos campagnes</p>
+            <a href="{% url 'base' %}" class="hero-btn">Consulter Nos Materiel </a>
+        </div>
+    </section>
+<!-------------------------------------Fin nav-bar-------------------------------------------------------->
+<!--------------------------Section Expertise ------------------------------------------------------------>
+    <section id="expertise" class="expertise">
+        <h1>Nos expertises</h1>
+        <p>Une Offre Qui S'adapte À Vos Besoins</p>
+        <div class="row">
+            <div class="expertise-col">
+                <h3><i class="fas fa-mobile-alt"></i>Applications Web Et Mobile</h3>
+                <p>Que vous teniez l'application du siècle ou que vous souhaitiez déployer vos services sur le web
+                    ou sur le mobile, une équipe de passionnés rendra possibles vos projets digitaux.</p>
+            </div>
+            <div class="expertise-col">
+                <h3><i class="fas fa-user-shield"></i>Conseil Et Audit</h3>
+                <p>Grâce à son expertise, Threecomp vous aide à réussir votre transformation digitale et vous oriente
+                    vers les solutions techniques, ergonomiques et stratégiques qui collent le mieux à vos besoins et à
+                    ceux de vos utilisateurs.</p>
+            </div>
+            <div class="expertise-col">
+                <h3><i class="fas fa-cogs"></i>Développement Sur Mesure</h3>
+                <p>Chez Threecomp, nous pensons que chaque entreprise possède une problématique métier propre à son
+                    activité.</p>
+            </div>
+        </div>
+    </section>
+<!--------------------FIN Section Expertise-------------------------->
+<!--------------------Section Solutions------------------------------>
+    <section id="solutions" class="solutions">
+        <h1>Nos Solutions</h1>
+        <p>Optimisez, sécurisez et automatisez votre <br>
+            stratégie numérique.</p>
+            <div class="row">
+                <div class="solutions-col">
+                    <img src="{% static 'assets/img/Art.jpeg' %}" alt="">
+                    <div class="layer">
+                        <h3 class="h3-Solutions">Cybersecurity</h3>
+                    </div>
+                </div>
+                <div class="solutions-col">
+                    <img src="{% static 'assets/img/Iaa.jpeg' %}" alt="">
+                    <div class="layer">
+                        <h3 class="h3-Solutions">L'intelligence artificielle</h3>
+                    </div>
+                </div>
+                <div class="solutions-col">
+                    <img src="{% static 'assets/img/Data.jpg' %}" alt="">
+                    <div class="layer">
+                        <h3 class="h3-Solutions">Data Science</h3>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-------------------------FIN Section Solutions------------------------------>
+<!---------------------------------Realisation-------------------------------->
+<section id="realisation" class="realisation">
+    <h2 class="section-title">Nos Réalisations</h2>
+    <h1 class="main-title">Quelques Exemples De Réalisation<br>Web Et Mobile</h1>   
+    <section class="slider_container">
+        <div class="container">
+            <div class="swiper card_slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img_box">
+                            <img src="{% static 'assets/img/r1.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_box">
+                            <img src="{% static 'assets/img/r2.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_box">
+                            <img src="{% static 'assets/img/r3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_box">
+                            <img src="{% static 'assets/img/r4.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img_box">
+                            <img src="{% static 'assets/img/r5.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev" id="backBtn"></div>
+            <div class="swiper-button-next" id="nextBtn"></div>
+        </div>
+    </section>
+</section>
+<!----------------------------Contact Us------------------------------->
+<div  id ="contact" class="contactUs">
+    <div class="box">
+        <!------Form Box-------->
+        <div class="contact form">
+            <h2>Ecrivez-nous</h2>
+            <form id="contact-form" method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <input type="hidden" name="access_key" value="139e65d6-2977-45f5-aa11-b9154cdaa791">
+                <div class="formBox">
+                    <div class="row50">
+                        <div class="inputBox">
+                            <span>Nom</span>
+                            <input type="text" placeholder="">
+                        </div>
+                        <div class="inputBox">
+                            <span>Adresse E-mail</span>
+                            <input type="text" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="row50">
+                        <div class="inputBox">
+                            <span>Objet de la demande</span>
+                            <input type="text" placeholder="">
+                        </div>
+                        <div class="inputBox">
+                            <span>Téléphone</span>
+                            <input type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBox">
+                            <span>Message</span>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBox">
+                            <input type="submit" value="Envoyer">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-------Info Box-------->
+        <div class="contact info">
+            <h2>Contact Info</h2>
+            <div class="infoBox">
+                <div>
+                    <span><ion-icon name ="location"></ion-icon></span>
+                    <p>17 Avenue Zerktouni magasin n° 1 - Qbibat, Rabat</p>
+                </div>
+                <div>
+                    <span><ion-icon name ="mail"></ion-icon></span>
+                <a href="mailto:threecomp@threecomp.ma">threecomp@threecomp.ma</a>               
+                </div>
+                <div>
+                    <span><ion-icon name ="call"></ion-icon></span>
+                <a href="tel:05 37 27 85 60">05 37 27 85 60</a>               
+                </div>
+                <!--Social Media-->
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/threecomp.maroc/?locale=en_GB"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="https://fr.linkedin.com/company/three-comp"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="https://www.instagram.com/threecomprabat/"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                </ul>
+                </div>
+        </div>
+        <!--------Map Box-------->
+        <div class="contact map">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.146900753264!2d-6.8572060245490745
+!3d34.01444001972582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76c91f508834d%3A0xf4c824af8e601b20!
+2sThree%20Comp!5e0!3m2!1sfr!2sma!4v1723498619829!5m2!1sfr!2sma" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+
+    </div>
+</div>
+<!-------------------------------partenaire----------------------------------->
+<section class="partenaire">
+    <h1>Ils nous ont fait confiance</h1>
+    <section class="carousel_container">
+        <div class="containerr">
+            <div class="swiper card_carsouel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-8.jpg' %}" alt="partenaire1">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-7.jpg' %}" alt="partenaire2">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-6.jpg' %}" alt="partenaire3">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-5.jpg' %}" alt="partenaire4">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-4.jpg' %}" alt="partenaire5">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-3.jpg' %}" alt="partenaire6">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-2.jpg' %}" alt="partenaire7">
+                    </div>
+                    <div class="swiper-slide box_img">
+                        <img src="{% static 'assets/img/part-1.jpg' %}" alt="partenaire8">
+                    </div>
+                </div>
+            </div>
+            <div class="swiperr-button-prev" id="backBTN">&#8249;</div>
+            <div class="swiperr-button-next" id="nextBTN">&#8250;</div>
+        </div>
+    </section>
+</section>
+
+<!--------------Fin partenaire------------------------------------------------->
+<!---------------Footer-------------------------------------------------------->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <a href="home.html"><img src="{% static 'assets/img/logo2.png' %}" alt=""></a>
+                <p>THREECOMP GROUP vous accompagne dans la mise en place<br>
+                    et la réussite de votre projet grâce à des solutions<br>
+                    technologiques innovantes et développées sur mesure.<br>
+                    Notre quotidien consiste à équiper vos infrastructures<br>
+                    informatiques et technologiques et à vous guider dans vos <br>
+                    choix de développement stratégiques.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Accès rapide</h4>
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                    <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                    <li><a href="#realisation" class="nav-link">Realisation</a></li>
+                    <li><a href="#materiel" class="nav-link">Service & Materiel</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- <li><a href="#about" class="nav-link">ABOUT</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/threecomp.maroc/?locale=en_GB"><i class="fab fa-facebook"></i></a>  
+                    <a href="https://www.instagram.com/threecomprabat/"><i class="fab fa-instagram"></i></a>    
+                    <a href="home.html"><i class="fab fa-twitter"></i></a>    
+                    <a href="https://fr.linkedin.com/company/three-comp"><i class="fab fa-linkedin"></i></a>    
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--------- Script  JS  [ for show and hide ]  icone menu and close ---------->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<!----------------------------FIN SCRIPT--------------------------------------->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!--------------------------Initialize Swiper---------------------------------->
+<script type="text/javascript">
+    var swiper = new Swiper(".card_slider", {
+        slidesPerView: 3, // Number of slides visible at once
+        spaceBetween: 30, // Spacing between slides
+        loop: true,
+        navigation: {
+            nextEl: "#nextBtn",
+            prevEl: "#backBtn",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            }
+        }
+    });
+</script>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+event.preventDefault(); // Empêche la soumission par défaut pour qu'on puisse faire un envoi AJAX
+
+var form = event.target;
+var formData = new FormData(form);
+
+// Récupère le nom de l'utilisateur
+var name = formData.get('Nom');
+
+// Envoi des données à Web3Forms
+fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData,
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success) {
+        // Continue à envoyer le formulaire à Django si l'envoi à Web3Forms est réussi
+        form.submit();
+        alert('Envoyé avec succès, ' + name + '!');
+    } else {
+        alert('Une erreur est survenue lors de l\'envoi du formulaire.');
+    }
+})
+.catch(error => {
+    console.error('Erreur:', error);
+    alert('Une erreur est survenue lors de l\'envoi du formulaire.');
+});
+});
+</script>
+<script>
+    var swiper = new Swiper(".card_carsouel", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+        delay: 3000, // Delay between transitions (in milliseconds)
+        disableOnInteraction: false, // Keeps autoplay running even after user interaction
+    },
+        navigation: {
+            nextEl: "#nextBTN",
+            prevEl: "#backBTN",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            }
+        },
+        speed: 1000, // Smooth slide transition speed (1 second)
+
+    });
+    </script>
+<!-------------------------------contact-------------------------------->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------------about us content-------------------------------------------->
+
+<!-- <section  id="about" class="about-us">
+    <div class="row">
+        <div class="about-col">
+            <h1>Who we are</h1>
+            <p>THREECOMP GROUP vous accompagne dans la mise en place<br>
+                et la réussite de votre projet grâce à des solutions<br> 
+                technologiques innovantes et développées sur mesure.</p>
+                <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+        </div>
+        <div class="about-col"><img src="{% static 'assets/img/Ab.jpg' %}"></div>
+    </div>
+
+</section> -->
+<!-------------------------Fin About-us---------------------------------------->

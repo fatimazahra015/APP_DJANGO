@@ -1,0 +1,74 @@
+{% extends 'Ecom/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-5 mb-4">
+            <div class="card">
+                <img src="{{ products.image1.url }}" class="card-img-top" alt="{{ products.name }}">
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ products.name }}</h2>
+                    <p class="card-text text-muted">{{ products.description|safe }}</p>
+                    
+                    <div class="mb-3">
+                        {% if products.is_sale %}
+                            <span class="text-muted text-decoration-line-through">{{ products.price }} DH</span>
+                            <span class="h4 text-danger"> {{ products.sale_price }} DH</span>
+                        {% else %}
+                            <span class="h4">{{ products.price }} DH</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="qty-cart" class="col-md-3 col-form-label">Quantity:</label>
+                        <div class="col-md-4">
+                            <select class="form-select" id="qty-cart">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'base' %}" class="btn btn-secondary">Home</a>
+                        <button type="button" value="{{ products.id }}" class="btn btn-primary" id="add-cart">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br>
+<script>
+    $(document).on('click', '#add-cart', function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '{% url "cart_add" %}',
+            data: {
+                product_id: $('#add-cart').val(),
+                product_qty: $('#qty-cart option:selected').text(),
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                action: 'post'
+            },
+            success: function(json) {
+                // document.getElementById('cart_quantity').textContent = json.qty;
+                location.reload();
+            },
+            error: function(xhr, errmsg, err) {
+                console.error('Error: ' + errmsg);
+            }
+        });
+    });
+</script>
+{% endblock content %}

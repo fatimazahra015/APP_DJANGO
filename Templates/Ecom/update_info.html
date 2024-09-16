@@ -1,0 +1,48 @@
+{% extends 'Ecom/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Header Section -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Update User Info</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Keep your information up-to-date</p>
+        </div>
+    </div>
+</header>
+
+<!-- Update Profile Form -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4">
+                <h3 class="text-center mb-4">Update Your Information</h3>
+                <strong>Billing Information</strong>
+                <!-- Form -->
+                <form method="post" action="{% url 'update_info' %}">
+                    {% csrf_token %}
+                    
+                    <!-- Form Fields dynamically rendered -->
+                    <div class="mb-3">
+                        {{ form.as_p }}
+                        <br>
+                        <strong>Shipping Information</strong>
+                        <br><br>
+                        {{shipping_form.as_p}}
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-dark btn-lg">Save Changes</button>
+                    </div>
+                </form>
+                <br>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
